@@ -1,4 +1,4 @@
-package GestionContactos.modelo;
+package CRUD.GestionContactos.modelo;
 
 // Creador: Nicolas Camargo
 

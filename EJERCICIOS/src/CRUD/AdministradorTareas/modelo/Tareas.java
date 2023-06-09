@@ -1,4 +1,4 @@
-package AdministradorTareas.modelo;
+package CRUD.AdministradorTareas.modelo;
 
 public class Tareas {
 

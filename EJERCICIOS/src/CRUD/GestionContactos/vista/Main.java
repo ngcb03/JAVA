@@ -1,7 +1,7 @@
-package GestionContactos.vista;
+package CRUD.GestionContactos.vista;
 
-import GestionContactos.modelo.Contactos;
-import GestionContactos.controlador.GestorContactos;
+import CRUD.GestionContactos.modelo.Contactos;
+import CRUD.GestionContactos.controlador.GestorContactos;
 
 import java.util.Scanner;
 import java.util.List;

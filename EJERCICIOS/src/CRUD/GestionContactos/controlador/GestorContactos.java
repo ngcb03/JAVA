@@ -1,6 +1,6 @@
-package GestionContactos.controlador;
+package CRUD.GestionContactos.controlador;
 
-import GestionContactos.modelo.Contactos;
+import CRUD.GestionContactos.modelo.Contactos;
 
 import java.util.ArrayList;
 import java.util.List;

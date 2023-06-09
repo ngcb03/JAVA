@@ -1,6 +1,6 @@
-package AdministradorTareas.controlador;
+package CRUD.AdministradorTareas.controlador;
 
-import AdministradorTareas.modelo.Tareas;
+import CRUD.AdministradorTareas.modelo.Tareas;
 
 import java.util.ArrayList;
 import java.util.List;
