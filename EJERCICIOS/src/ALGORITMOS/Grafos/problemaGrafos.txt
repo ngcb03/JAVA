@@ -1,0 +1,4 @@
+Crea una clase para representar un grafo y desarrolla algoritmos de
+búsqueda y recorrido como el recorrido en profundidad (DFS) y el
+recorrido en amplitud (BFS). Aplica estos algoritmos para resolver
+ problemas como encontrar el camino más corto entre dos nodos.

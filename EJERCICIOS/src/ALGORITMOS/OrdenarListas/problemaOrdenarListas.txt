@@ -1,0 +1,3 @@
+Implementar algoritmos de ordenamiento como el Bubble Sort, Insertion Sort,
+ Selection Sort, Merge Sort, Quick Sort, etc. Compara su eficiencia y
+ tiempo de ejecución en diferentes conjuntos de datos.
