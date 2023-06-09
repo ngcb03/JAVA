@@ -31,10 +31,11 @@ public class Main {
         while (!salir) {
             System.out.println("------ GESTIÓN DE CONTACTOS ------");
             System.out.println("1. Agregar contacto");
-            System.out.println("2. Mostrar contactos");
-            System.out.println("3. Actualizar contacto");
-            System.out.println("4. Eliminar contacto");
-            System.out.println("5. Salir");
+            System.out.println("2. Buscar contacto");
+            System.out.println("3. Mostrar todos los contactos");
+            System.out.println("4. Actualizar contacto");
+            System.out.println("5. Eliminar contacto");
+            System.out.println("6. Salir");
             System.out.print("Ingrese una opción: ");
             int opcion = scanner.nextInt();
             scanner.nextLine(); // Consumir el salto de línea
@@ -44,15 +45,18 @@ public class Main {
                     agregarContacto();
                     break;
                 case 2:
-                    mostrarContactos();
+                    obtenerContactos();
                     break;
                 case 3:
-                    actualizarContacto();
+                    mostrarContactos();
                     break;
                 case 4:
-                    eliminarContacto();
+                    actualizarContacto();
                     break;
                 case 5:
+                    eliminarContacto();
+                    break;
+                case 6:
                     salir = true;
                     break;
                 default:
@@ -63,9 +67,9 @@ public class Main {
 
     private static void agregarContacto(){
         System.out.println("------ AGREGAR CONTACTO ------");
-        System.out.print("Ingrese el nombre: ");
+        System.out.print("Ingrese solo el nombre: ");
         String nombre = scanner.nextLine();
-        System.out.print("Ingrese el apellido: ");
+        System.out.print("Ingrese solo el apellido: ");
         String apellido = scanner.nextLine();
         System.out.print("Ingrese el teléfono: ");
         String telefono = scanner.nextLine();
@@ -79,19 +83,39 @@ public class Main {
     }
 
     private static void obtenerContactos(){
+        System.out.println("------ INFORMACION DE CONTACTO ------");
+        List<Contactos> contactos = gestorContactos.obtenerContactos();
 
+        if (contactos.isEmpty()) {
+            System.out.println("No hay contactos registrados.");
+        } else{
+            mostrarContactos();
+            System.out.print("Ingrese el id del contacto a buscar: ");
+            int indice = scanner.nextInt();
+            if (indice >= 1 && indice <= contactos.size()){
+                for (int i = 0; i < contactos.size(); i++) {
+                    if(contactos.get(i).getId_contacto() == indice) {
+                        Contactos contacto = contactos.get(i);
+                        System.out.println("Id: " + contacto.getId_contacto() + ". " + contacto.getNombre() + " " +
+                                contacto.getApellido() + " | Teléfono: " + contacto.getTelefono() +
+                                " | Correo: " + contacto.getCorreo());
+                    }
+                }
+            }else{
+                System.out.println("Número de contacto inválido.");
+            }
+        }
     }
 
     private static void mostrarContactos(){
         System.out.println("------ LISTA DE CONTACTOS ------");
         List<Contactos> contactos = gestorContactos.obtenerContactos();
-
         if (contactos.isEmpty()) {
             System.out.println("No hay contactos registrados.");
         } else {
             for (int i = 0; i < contactos.size(); i++) {
                 Contactos contacto = contactos.get(i);
-                System.out.println((i + 1) + ". " + contacto.getNombre() + " " +
+                System.out.println("Id: " + contacto.getId_contacto() + ". " + contacto.getNombre() + " " +
                         contacto.getApellido() + " | Teléfono: " + contacto.getTelefono() +
                         " | Correo: " + contacto.getCorreo());
             }
@@ -101,16 +125,16 @@ public class Main {
     private static void actualizarContacto(){
         System.out.println("------ ACTUALIZAR CONTACTO ------");
         mostrarContactos();
-        System.out.print("Ingrese el número de contacto a actualizar: ");
+        System.out.print("Ingrese el id del contacto a actualizar: ");
         int indice = scanner.nextInt();
         scanner.nextLine(); // Consumir el salto de línea
 
         if (indice >= 1 && indice <= gestorContactos.obtenerContactos().size()) {
             Contactos contacto = gestorContactos.obtenerContactos().get(indice - 1);
 
-            System.out.print("Ingrese el nuevo nombre: ");
+            System.out.print("Ingrese solo el nuevo nombre: ");
             String nombre = scanner.nextLine();
-            System.out.print("Ingrese el nuevo apellido: ");
+            System.out.print("Ingrese solo el nuevo apellido: ");
             String apellido = scanner.nextLine();
             System.out.print("Ingrese el nuevo teléfono: ");
             String telefono = scanner.nextLine();

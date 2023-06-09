@@ -5,7 +5,7 @@ package GestionContactos.modelo;
 public class Contactos {
 
     private int Id_contacto;
-    private static int Id_incremental = 0;
+    private static int Id_incremental = 1;
     private String nombre;
     private String apellido;
 
