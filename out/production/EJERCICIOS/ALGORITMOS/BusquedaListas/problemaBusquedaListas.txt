@@ -1,0 +1,2 @@
+Crear algoritmos de búsqueda como la Búsqueda Lineal y la Búsqueda Binaria.
+ Prueba estos algoritmos en diferentes arreglos y compara su eficiencia.

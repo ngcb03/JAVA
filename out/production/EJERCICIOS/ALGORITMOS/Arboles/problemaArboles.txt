@@ -1,0 +1,3 @@
+Implementar diferentes tipos de árboles como árboles binarios de búsqueda,
+ árboles AVL o árboles de expresión. Desarrolla algoritmos para insertar,
+ eliminar y buscar elementos en estos árboles.

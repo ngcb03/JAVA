@@ -89,20 +89,17 @@ public class Main {
         if (contactos.isEmpty()) {
             System.out.println("No hay contactos registrados.");
         } else{
-            mostrarContactos();
-            System.out.print("Ingrese el id del contacto a buscar: ");
-            int indice = scanner.nextInt();
-            if (indice >= 1 && indice <= contactos.size()){
-                for (int i = 0; i < contactos.size(); i++) {
-                    if(contactos.get(i).getId_contacto() == indice) {
-                        Contactos contacto = contactos.get(i);
-                        System.out.println("Id: " + contacto.getId_contacto() + ". " + contacto.getNombre() + " " +
-                                contacto.getApellido() + " | Teléfono: " + contacto.getTelefono() +
+            System.out.print("Ingrese el nombre o apellido del contacto a buscar: ");
+            String buscar = scanner.nextLine();
+            for (int i = 0; i < contactos.size(); i++) {
+                if(buscar.equals(contactos.get(i).getNombre()) || buscar.equals(contactos.get(i).getApellido())) {
+                    Contactos contacto = contactos.get(i);
+                    System.out.println("Id: " + contacto.getId_contacto() + ". " + contacto.getNombre() + " " +
+                            contacto.getApellido() + " | Teléfono: " + contacto.getTelefono() +
                                 " | Correo: " + contacto.getCorreo());
-                    }
+                } else{
+                    System.out.println("¡El contacto que busca no existe!");
                 }
-            }else{
-                System.out.println("Número de contacto inválido.");
             }
         }
     }
