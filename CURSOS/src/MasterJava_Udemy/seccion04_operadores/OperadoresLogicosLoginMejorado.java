@@ -21,18 +21,16 @@ public class OperadoresLogicosLoginMejorado {
         System.out.print("Ingrese contreña usuario: ");
         String p = scan.next();
 
-        for(int i = 0; i < usernames.length; i++){
-            if(usernames[i].equals(u) && password[i].equals(p)){
+        for(int i = 0; i < usernames.length && esAutentico != true; i++){
+            esAutentico = (usernames[i].equals(u) && password[i].equals(p)) ? true: false;
+            /*if(usernames[i].equals(u) && password[i].equals(p)){
                 esAutentico=true;
                 break;
-            }
+            }*/
         }
-
-        if(esAutentico){
-            System.out.println("Bienvenido ".concat(u).concat("!"));
-        }else{
-            System.out.println("¡Usuario erroneo, vuelva a intentarlo!");
-        }
+        String mensaje = esAutentico ?
+                ("Bienvenido ".concat(u).concat("!")): ("¡Usuario erroneo, vuelva a intentarlo!");
+        System.out.println(mensaje);
 
     }
 
