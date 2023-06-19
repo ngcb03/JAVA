@@ -34,7 +34,7 @@ public class MetodosStrings {
         System.out.println("nombre.substring(2) = " + nombre.substring(2));
         System.out.println("nombre.substring(2,10) = " + nombre.substring(2, 12));
 
-        System.out.println();
+        System.lineSeparator();
 
         String trabalenguas = "trabalenguas";
         System.out.println("trabalenguas = " + trabalenguas);
