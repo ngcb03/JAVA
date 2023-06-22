@@ -18,11 +18,29 @@ package MasterJava_Udemy.ejercicios;
  * Última actualización: 19/06/2023
  * */
 
+import java.util.Scanner;
+
 public class Ejercicio04 {
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.println("------ CAPACIDAD ESTANQUE GASOLINA ------");
+        System.out.print("Ingrese capacidad actual estanque en litros (1 a 70): ");
+        double capacidad_estanque = scanner.nextDouble();
 
+        if(capacidad_estanque >= 1 && capacidad_estanque <= 70){
+            String capacidad = capacidad_estanque == 70 ? "Estanque lleno" :
+                    (capacidad_estanque >= 60 ? "Estanque casi lleno" :
+                    (capacidad_estanque >= 40 ? "Estanque 3/4" :
+                    (capacidad_estanque >= 35 ? "Medio Estanque" :
+                    (capacidad_estanque >= 20) ? "Estanque Suficiente" :
+                        "Estanque Insuficiente")));
+            System.out.println("capacidad_estanque = " + capacidad);
+        }else{
+            System.out.println("Valor de capacidad de estanque incorrecta," +
+                    " vuelva a intentarlo!");
+        }
 
     }
 
